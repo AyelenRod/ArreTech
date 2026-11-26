@@ -6,11 +6,12 @@ interface StatCardProps {
   valor: React.ReactNode;
   icono?: React.ReactNode;
   tono?: Tono;
+  tonoValor?: Tono;
   detalle?: React.ReactNode;
   destacado?: boolean;
 }
 
-export function StatCard({ titulo, valor, icono, tono = "neutro", detalle, destacado = false }: StatCardProps) {
+export function StatCard({ titulo, valor, icono, tono = "neutro", tonoValor = tono, detalle, destacado = false }: StatCardProps) {
   return (
     <article
       className={cn(
@@ -32,7 +33,7 @@ export function StatCard({ titulo, valor, icono, tono = "neutro", detalle, desta
           </span>
         )}
       </div>
-      <p className={cn("text-3xl font-bold tracking-tight tabular-nums", clasesTonoTexto[tono])}>{valor}</p>
+      <p className={cn("text-3xl font-bold tracking-tight tabular-nums", clasesTonoTexto[tonoValor])}>{valor}</p>
       {detalle && <div className="text-xs text-default-500">{detalle}</div>}
     </article>
   );

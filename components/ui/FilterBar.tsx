@@ -51,11 +51,12 @@ interface FilterSelectProps {
   opciones: OpcionSelect[];
   valor: string;
   onChange: (valor: string) => void;
+  etiquetaTodos?: string;
 }
 
 /** Incluye la opción "Todos" con valor "" al inicio. */
-export function FilterSelect({ etiqueta, opciones, valor, onChange }: FilterSelectProps) {
-  const opcionesConTodos = [{ valor: "", etiqueta: "Todos" }, ...opciones];
+export function FilterSelect({ etiqueta, opciones, valor, onChange, etiquetaTodos = "Todos" }: FilterSelectProps) {
+  const opcionesConTodos = [{ valor: "", etiqueta: etiquetaTodos }, ...opciones];
   return (
     <Select
       aria-label={etiqueta}
