@@ -1,17 +1,15 @@
 import { LoginCard } from "./LoginCard";
 import { LoginFooter } from "./LoginFooter";
 import { LoginHeader } from "./LoginHeader";
-import { ModulosPorPerfil } from "./ModulosPorPerfil";
 import { PanelImagen } from "./PanelImagen";
 
 export function LoginView() {
   return (
-    <div className="flex min-h-dvh flex-col bg-default-50">
+    <div className="flex min-h-dvh flex-col bg-default-50 lg:h-dvh">
       <LoginHeader />
-      <main className="grid flex-1 gap-10 px-4 py-8 sm:px-10 lg:grid-cols-[minmax(0,450px)_minmax(0,1fr)]">
-        <div className="mx-auto flex w-full max-w-[450px] flex-col gap-6">
+      <main className="grid flex-1 gap-8 px-4 py-5 sm:px-8 lg:min-h-0 lg:grid-cols-2 lg:grid-rows-[minmax(0,1fr)]">
+        <div className="flex flex-col lg:overflow-y-auto">
           <LoginCard />
-          <ModulosPorPerfil />
         </div>
         <PanelImagen />
       </main>

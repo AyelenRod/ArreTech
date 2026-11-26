@@ -10,7 +10,7 @@ export function LoginForm() {
     <Form
       validationBehavior="native"
       onSubmit={(evento) => evento.preventDefault()}
-      className="flex flex-col items-stretch gap-5"
+      className="flex flex-col items-stretch gap-4"
     >
       <Input
         name="identificador"
@@ -37,7 +37,7 @@ export function LoginForm() {
         type="submit"
         color="primary"
         radius="lg"
-        className="h-11 font-semibold"
+        className="h-10 font-semibold"
         endContent={<ArrowRight className="size-4" aria-hidden />}
       >
         Ingresar al Sistema
