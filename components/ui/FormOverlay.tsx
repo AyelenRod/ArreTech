@@ -105,7 +105,15 @@ export function FormOverlay({
       className="flex flex-col items-stretch gap-4"
     >
       {errorGeneral && <Alert color="danger" title="No se pudo guardar" description={errorGeneral} />}
-      {children}
+      {/* Las reglas entre campos (p. ej. teléfono o correo) se reevalúan al enviar; si no, el otro campo queda bloqueado. */}
+      <div
+        className="contents"
+        onInput={() => {
+          if (Object.keys(errores).length > 0) setErrores({});
+        }}
+      >
+        {children}
+      </div>
     </Form>
   );
 
